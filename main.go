@@ -88,6 +88,10 @@ func commandInspect(a []string) error {
 	return pokeapi.InspectPokemon(pokemon, caught)
 }
 
+func commandPokedex(a []string) error {
+	return pokeapi.Pokedex(caught)
+}
+
 type cliCommand struct {
 	name        string
 	description string
@@ -135,6 +139,11 @@ func main() {
 			name:        "inspect",
 			description: "inspect a pokemon",
 			callback:    commandInspect,
+		},
+		"pokedex": {
+			name:        "pokedex",
+			description: "inspect caught pokemon in pokedex",
+			callback:    commandPokedex,
 		},
 	}
 	cache = pokecache.NewCache(time.Minute * 5)

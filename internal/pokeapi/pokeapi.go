@@ -234,3 +234,12 @@ func InspectPokemon(pokemonName string, caught map[string]Pokemon) error {
 
 	return nil
 }
+
+func Pokedex(caught map[string]Pokemon) error {
+	fmt.Println("Your Pokedex:")
+	for name, _ := range caught {
+		fmt.Printf("- %s\n", name)
+	}
+
+	return nil
+}
